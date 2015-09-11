@@ -31,6 +31,9 @@ body{
 		align-items: center;
 		.header-logo{
 			height: 100%;
+			& > img{
+				height: 100%;
+			}
 		}
 		.header-adress-form{
 			.header-contacts{
@@ -43,6 +46,16 @@ body{
 				.contacts__icon{
 					display: none;
 				}
+				.svg-phone{
+					background-image: url('../../www/img/phone325.svg');
+					fill: #fff;
+					display: block;
+					width: 35px;
+					height: 35px;
+					-webkit-background-size: contain;
+					background-size: contain;
+					background-repeat: no-repeat;
+				}
 			}
 		}
 	}
@@ -51,37 +64,7 @@ body{
 			.main-page__sidebar{
 				flex: 0 0 300px;
 				padding: 20px;
-				.sidebar-item{
-					article{
-						height: 0;
-						-webkit-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
-						-moz-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
-						-o-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
-						-ms-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
-						transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
-					}
-					input{
-						display: none;
-						&:checked ~ article {
-							-webkit-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
-							-moz-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
-							-o-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
-							-ms-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
-							transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
-							box-shadow: 0px 0px 0px 1px rgba(155, 155, 155, 0.3);
-							height: 100px;
-							overflow: hidden;
-						}
-					}
-					label + label
-					label{
-						width: 100%;
-						height: 30px;
-						display: block;
-						line-height: 30px;
-						cursor: pointer;
-					}
-				}
+
 			}
 			.main-page__content{
 				flex: 1;
@@ -91,7 +74,6 @@ body{
 					float: left;
 					padding: 10px 0;
 					.content{
-						float: left;
 						margin: 0 auto;
 						max-width: 280px;
 						width: 80%;
@@ -115,7 +97,7 @@ body{
 							padding: 0 20px;
 							text-align: justify;
 						}
-						button{
+						.buy{
 							background: @content-inner-wrapper;
 							border: none;
 							border-radius: @content-inner-border-radius;
@@ -135,6 +117,30 @@ body{
 
 //media queries
 
+
+@media screen and (max-width: 1100px){
+	.main-page{
+		.main-container{
+			.main-page__content{
+				.inner__wrap{
+					width: 50%;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px){
+	.main-page{
+		.main-container{
+			.main-page__sidebar{
+				display: none;
+			}
+		}
+	}
+}
+
+
 @media screen and (max-width: 480px) {
 	.main-page{
 		.main-page__header{
@@ -148,6 +154,23 @@ body{
 						display: none;
 					}
 
+				}
+			}
+		}
+	}
+}
+
+
+
+@media screen and (max-width: 320px){
+	.main-page{
+		.main-container{
+			.main-page__content{
+				.inner__wrap{
+					width: 100%;
+					.contentdisdd{
+						width: 100%;
+					}
 				}
 			}
 		}
